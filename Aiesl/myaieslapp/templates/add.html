@@ -1,0 +1,61 @@
+{%extends 'mainpage.html' %}
+
+{% block content %}
+<style>
+   .add{background-color: silver}
+</style>
+  <div class="add">
+    <form method="post">
+      {% csrf_token %}
+      <table>
+         <tr>
+            <td>
+               <label style="display: block;">Employee Name:</label>
+               {{ form.empname }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <label style="display: block;">SAP ID:</label>
+               {{ form.sap }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <label style="display: block;">Designation</label>
+               {{ form.designation }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <label style="display: block;">Mobile no:</label>
+               {{ form.mob }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <label style="display: block;">Email:</label>
+               {{ form.email }}
+            </td> 
+         </tr>
+         <tr>
+            <td>
+               <label style="display: block;">Trained in:</label>
+               {{ form.trained }}
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <label style="display: block;">Group:</label>
+               {{ form.grp }}
+            </td>
+      </table>
+
+      <input type="submit" value="Submit" id="butt">
+    </form>
+    <a href="{% url 'UpDel' %}">
+      <h2>update/delete</h2>
+   </a>  
+  </div>
+
+{% endblock %}
